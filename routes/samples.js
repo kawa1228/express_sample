@@ -15,4 +15,14 @@ router.get('/hello', function(req, res, next) {
   res.send(param);
 });
 
+// /samples/hello/(任意の文字列)
+router.get('/hello/:place', function(req, res, next) {
+  var param = {
+		"result": `Hello ${req.params.place} !!`,
+		"shop name": req.query.shop
+	};
+  res.header('Content-Type', 'application/json; charset=utf-8')
+  res.send(param);
+});
+
 module.exports = router;
