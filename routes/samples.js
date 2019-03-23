@@ -25,4 +25,12 @@ router.get('/hello/:place', function(req, res, next) {
   res.send(param);
 });
 
+// /samples にPOSTメソッドのリクエストを投げると、JSONがかえってくる
+// curl -X POST "http://localhost:3000/samples" -d '{"card": "カード"}'
+router.post('/', function(req, res, next) {
+  var param = {"値": "POSTメソッドのリクエストを受け付けました","bodyの値":req.body.card};
+  res.header('Content-Type', 'application/json; charset=utf-8');
+  res.send(param);
+});
+
 module.exports = router;
