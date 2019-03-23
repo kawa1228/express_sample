@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+// /samples の各API
+
 // /samples
 router.get('/', function(req, res, next) {
   var param = {"値":"これはサンプルAPIです"};
